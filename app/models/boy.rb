@@ -17,7 +17,7 @@ class Boy < ApplicationRecord
 	end
 
 	def gravatar
-		"http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}"
+		"http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.reverse)}"
 	end
 
 	private
