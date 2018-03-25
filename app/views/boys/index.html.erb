@@ -1,0 +1,55 @@
+<div class="container">
+<h1 class = "boy_head"> Boys List </h1>
+
+
+<p style="float: right;">
+
+  <a href="<%= new_boy_path() %>" class="btn btn-info btn-sm">
+    <span class="glyphicon glyphicon-user"></span> New Boy 
+  </a>
+</p> 
+  <div class="container" style="overflow: auto;max-height: 400px;">
+    
+    <div class="row">  
+
+    	<% @boys.each do |boy| %>
+				
+				<div class="col-sm-4" style="border-left: 3px solid gray;margin-bottom: 15px;">
+				
+	        <h3><%= boy.full_name%></h3>
+	        <div class="col-sm-2">
+	        <img src="<%= boy.gravatar %>" class="img-rounded" alt="Cinque Terre" width="75" height="75">
+	        </div>
+	        <div class="col-sm-10">
+	        <ul>
+	        	<li><label>Email:</label><span class="boyspan" ><%= boy.email%> <span></span></li>
+	        	<li><label>Number of GF:</label> <span class="boyspan"><%= boy.girl_friends.length%></span></li>
+	        </ul>
+	        </div>
+
+	         <div class="col-sm-12" style="margin-top: 15px;">
+	       	<%= link_to "Show Details", boy_path(boy.id) ,:class => "btn btn-success btn-xs" %>
+	       	<%= link_to "Edit Details", boy_path(boy.id) ,:class => "btn btn-warning btn-xs" %>
+	       	<%= link_to "Delete Details", {:action => :destroy, :id=> boy.id} ,:method=> :delete, :class => "btn btn-danger btn-xs", data: {:confirm => 'Are you sure?'} %>
+	       	</div>
+	       	
+
+	      </div>
+
+			<% end %>
+      
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+	h1.boy_head{
+		border-bottom: 3px solid brown;
+		color: wheat;
+	}
+
+	span.boyspan{
+		color:yellowgreen;
+		padding-left: 10px;
+	}
+</style>
