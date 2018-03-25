@@ -8,6 +8,8 @@ class Boy < ApplicationRecord
 
 	before_save :reverse_email
 
+	after_initialize :reverse_email
+
 	has_many :girl_friends
 
 	#scope :all_boys, -> select("*")
@@ -17,7 +19,7 @@ class Boy < ApplicationRecord
 	end
 
 	def gravatar
-		"http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.reverse)}"
+		"http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}"
 	end
 
 	private
