@@ -1,16 +1,16 @@
 class Boy < ApplicationRecord
 
-	validates :first_name, :presence => true
-	validates :last_name, :presence => true
-	validates :email, :presence => true
+	validates :first_name, 	:presence => true
+	validates :last_name, 	:presence => true
+	validates :email, 			:presence => true
 
-	validates :first_name, uniqueness: { scope: :last_name, message: "should happen once per year" }
+	validates :first_name, uniqueness: { scope: :last_name, message: "Boy Exists" }
 
-	before_save :reverse_email
+	# before_save :reverse_email
 
-	after_initialize :reverse_email
+	# after_initialize :reverse_email
 
-	has_many :girl_friends
+	has_many :girl_friends, :dependent => :destroy
 
 	#scope :all_boys, -> select("*")
 
@@ -25,7 +25,7 @@ class Boy < ApplicationRecord
 	private
 
 	def reverse_email
-		self.email = self.email.reverse
+		self.email = self.email.reverse unless self.email.blank?
 	end
 
 end

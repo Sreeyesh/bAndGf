@@ -8,7 +8,7 @@
     <span class="glyphicon glyphicon-user"></span> New Boy 
   </a>
 </p> 
-  <div class="container" style="overflow: auto;max-height: 400px;">
+  <div class="container" style="overflow: auto;">
     
     <div class="row">  
 
@@ -29,7 +29,7 @@
 
 	         <div class="col-sm-12" style="margin-top: 15px;">
 	       	<%= link_to "Show Details", boy_path(boy.id) ,:class => "btn btn-success btn-xs action-button" %>
-	       	<%= link_to "Edit Details", boy_path(boy.id) ,:class => "btn btn-warning btn-xs action-button" %>
+	       	<%= link_to "Edit Details", edit_boy_path(boy.id) ,:class => "btn btn-warning btn-xs action-button" %>
 	       	<%= link_to "Delete Details", {:action => :destroy, :id=> boy.id} ,:method=> :delete, :class => "btn btn-danger btn-xs action-button", data: {:confirm => 'Are you sure?'} %>
 	       	</div>
 	       	

@@ -2,7 +2,7 @@
 <h1 class = "boy_head"> <%= @boy.full_name %> </h1>
 <p style="float: right;">
 
-  <a href="<%= new_boy_path() %>" class="btn btn-info btn-sm">
+  <a href="<%= new_boy_girl_friend_path(@boy.id) %>" class="btn btn-info btn-sm">
     <span class="glyphicon glyphicon-user"></span> New Girl Friend 
   </a>
 </p> 
@@ -23,17 +23,15 @@
   	<label>Email:</label><span class="boyspan" ><%= @boy.email %> </span></br>
   	<label>Number of GF:</label> <span class="boyspan"><%= @boy.girl_friends.length %></span>
 
-
-     
-
   </div>
 
  	
 
 </div>
 <div style="float: right;margin-bottom: 15px">
-     	<%= link_to "Edit Details", boy_path(@boy.id) ,:class => "btn btn-warning btn-xs" %>
-     	<%= link_to "Delete Details", {:action => :destroy, :id=> @boy.id} ,:method=> :delete, :class => "btn btn-danger btn-xs" %></div>
+     	<%= link_to "Edit Details", edit_boy_path(@boy.id) ,:class => "btn btn-warning btn-xs" %>
+     	<%= link_to "Delete Details", {:action => :destroy, :id=> @boy.id} ,:method=> :delete, :class => "btn btn-danger btn-xs" %>
+</div>
 <table class="table table-striped table-dark">
   <thead>
     <tr>
@@ -53,7 +51,7 @@
       	<td style="border-color: #32383e;width: 20%;">  
       		<%= link_to "", "#" ,:class => "glyphicon glyphicon-eye-open white-icon", :title => "Show Details" %>
 	       	<%= link_to "", "#" ,:class => "glyphicon glyphicon-edit white-icon", :title => "Edit Details" %>
-	       	<%= link_to "", "#" ,:method=> :delete, :class => "glyphicon glyphicon-trash white-icon", :title => "Delete Details" %>
+	       	<%= link_to "", "#" , :class => "glyphicon glyphicon-trash white-icon", :title => "Delete Details" %>
 
       	</td>
        </tr>

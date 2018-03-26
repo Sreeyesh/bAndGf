@@ -38,12 +38,10 @@
 		</nav>
 <% unless notice.blank? %>
 	<div class="container-fluid">
-<% if notice[:status] == "success" %>
-
-<p class="alert alert-success alert-dismissable fade in" id="notice"> <%= notice[:message] %></p> 
-
+<% if notice["status"] == "success" %>
+<p class="alert alert-success alert-dismissable fade in" id="notice"> <%= notice["message"] %></p> 
 <% else %>
-<p class="alert alert-danger alert-dismissable fade in" id="notice"> <%= notice[:message] %></p>
+<p class="alert alert-danger alert-dismissable fade in" id="notice"> <%= notice["message"] %></p>
 <% end %>
 </div>
 <% end %>
