@@ -1,0 +1,31 @@
+	<%= form_for([:boy, @girl_friend],:html => {:class => "form-horizontal"}) do %>
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="email">First Name:</label>
+	      <div class="col-sm-10">
+	      	<input type="text" class="form-control" id="first_name" placeholder="Enter First Name" name="girl_friend[first_name]" value="<%= @girl_friend.first_name %>" required>
+
+	      </div>
+	    </div>
+
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="email">Last Name:</label>
+	      <div class="col-sm-10">
+	      	<input type="text" class="form-control" id="last_name" placeholder="Enter Last Name" name="girl_friend[last_name]" value="<%= @girl_friend.last_name %>" required>
+	      </div>
+	    </div>
+
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="pwd">Email:</label>
+	      <div class="col-sm-10">          
+	        <input type="email" class="form-control" id="email" placeholder="Enter email" name="girl_friend[email]" value="<%= @girl_friend.email %>" required>
+	      </div>
+	    </div>
+
+	    <div class="form-group">        
+	      <div class="col-sm-offset-2 col-sm-10">
+	        <button type="submit" class="btn btn-success">Submit</button>
+	        <a href="<%= boy_path(@boy.id) %>" class="btn btn-danger"> Cancel
+				  </a>
+	      </div>
+	    </div>
+<% end %>
