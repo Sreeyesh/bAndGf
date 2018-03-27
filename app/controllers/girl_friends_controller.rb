@@ -8,6 +8,14 @@ class GirlFriendsController < ApplicationController
 		@girl_friend = GirlFriend.new
 	end
 
+	def show
+
+	end
+
+	def edit
+
+	end
+
 	def create
 		new_girl_friend = @boy.girl_friends.new(girl_friend_params)
 
