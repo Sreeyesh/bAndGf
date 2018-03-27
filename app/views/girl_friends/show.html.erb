@@ -1,0 +1,31 @@
+<div class="container">
+<h1 class = "boy_head"> <%= @girl_friend.full_name %> </h1>
+
+<p>
+
+  <a href="<%= boy_path(@boy.id) %>" class="btn btn-info btn-sm">
+    <span class="glyphicon glyphicon-user"></span> Back To Boy
+  </a>
+</p> 
+
+<div class="col-sm-12" style="margin-bottom: 15px" >
+	<div class="col-sm-4">
+  <img src="<%= @girl_friend.gravatar %>" class="img-rounded" alt="Cinque Terre" width="200" height="200">
+  </div>
+  <div class="col-sm-8" style="font-size: x-large;">
+
+  	<label>Email:</label><span class="boyspan" ><%= @girl_friend.email %> </span></br>
+  	<label>Belonngs To:</label> <span class="boyspan"><%= @boy.full_name %></span>
+
+  </div>
+
+ 	
+
+</div>
+<div >
+     	<%= link_to "Edit Details", edit_boy_girl_friend_path(@boy.id,@girl_friend.id) ,:class => "btn btn-warning btn-xs" %>
+     	<%= link_to "Delete Details", [@boy, @girl_friend], :method=> :delete, :class => "btn btn-danger btn-xs", data: {:confirm => 'Are you sure?'} %>
+</div>
+
+
+</div>

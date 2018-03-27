@@ -23,7 +23,7 @@ class BoysController < ApplicationController
 				if update_boy_success
 					redirect_to root_path, :notice => {:status => "success", :message => "Successfully Updated Boy"}
 				else
-					redirect_to new_boy_path, :notice => {:status => "error", :message => "Boy Updation Failed"}
+					redirect_to edit_boy_path, :notice => {:status => "error", :message => "Boy Updation Failed"}
 				end
 			}
 		end

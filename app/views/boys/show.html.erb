@@ -30,7 +30,7 @@
 </div>
 <div style="float: right;margin-bottom: 15px">
      	<%= link_to "Edit Details", edit_boy_path(@boy.id) ,:class => "btn btn-warning btn-xs" %>
-     	<%= link_to "Delete Details", {:action => :destroy, :id=> @boy.id} ,:method=> :delete, :class => "btn btn-danger btn-xs" %>
+     	<%= link_to "Delete Details", {:action => :destroy, :id=> @boy.id} ,:method=> :delete, :class => "btn btn-danger btn-xs", data: {:confirm => 'Are you sure?'} %>
 </div>
 <table class="table table-striped table-dark">
   <thead>
@@ -46,12 +46,12 @@
       <% @boy.girl_friends.each do|gf| %>
       <tr>
       	<td style="border-color: #32383e;"> <%= @boy.girl_friends.index(gf) + 1 %> </td>
-      	<td style="border-color: #32383e;"> <%= gf.first_name%> </td>
+      	<td style="border-color: #32383e;"> <%= gf.full_name%> </td>
       	<td style="border-color: #32383e;"> <%= gf.email%> </td>
       	<td style="border-color: #32383e;width: 20%;">  
-      		<%= link_to "", "#" ,:class => "glyphicon glyphicon-eye-open white-icon", :title => "Show Details" %>
-	       	<%= link_to "", "#" ,:class => "glyphicon glyphicon-edit white-icon", :title => "Edit Details" %>
-	       	<%= link_to "", "#" , :class => "glyphicon glyphicon-trash white-icon", :title => "Delete Details" %>
+      		<%= link_to "",  boy_girl_friend_path(@boy.id,gf.id) ,:class => "glyphicon glyphicon-eye-open white-icon", :title => "Show Details" %>
+	       	<%= link_to "", edit_boy_girl_friend_path(@boy.id,gf.id) ,:class => "glyphicon glyphicon-edit white-icon", :title => "Edit Details" %>
+	       	<%= link_to "", [@boy, gf] , :method => :delete, :class => "glyphicon glyphicon-trash white-icon", :title => "Delete Details",  data: {:confirm => 'Are you sure?'} %>
 
       	</td>
        </tr>
@@ -61,30 +61,3 @@
 </table>
 
 </div>
-
-<style type="text/css">
-	h1.boy_head{
-		border-bottom: 3px solid brown;
-		color: wheat;
-	}
-
-	span.boyspan{
-		color:yellowgreen;
-		padding-left: 10px;
-	}
-
-	table.table-dark {
-		color: #fff;
-    background-color: #212529;
-	}
-
-	.table-dark.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(255,255,255,.05);
-}
-
-a.white-icon{
-	color: white;
-	padding-right: 15px;
-}
-
-</style>

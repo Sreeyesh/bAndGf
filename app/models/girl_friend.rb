@@ -4,6 +4,8 @@ class GirlFriend < ApplicationRecord
 	validates :last_name, 	:presence => true
 	validates :email, 			:presence => true
 
+	validates :email, 			:uniqueness => true
+
 	validates :first_name, uniqueness: { scope: :last_name, message: "Girl Friend Exists" }
 
 	# before_save :reverse_email

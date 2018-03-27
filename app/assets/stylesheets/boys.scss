@@ -1,3 +1,23 @@
-// Place all the styles related to the boys controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+	h1.boy_head{
+		border-bottom: 3px solid brown;
+		color: wheat;
+	}
+
+	span.boyspan{
+		color:yellowgreen;
+		padding-left: 10px;
+	}
+
+	table.table-dark {
+		color: #fff;
+    background-color: #212529;
+	}
+
+	.table-dark.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255,255,255,.05);
+}
+
+a.white-icon{
+	color: white;
+	padding-right: 15px;
+}

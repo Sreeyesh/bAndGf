@@ -30,7 +30,7 @@
 	         <div class="col-sm-12" style="margin-top: 15px;">
 	       	<%= link_to "Show Details", boy_path(boy.id) ,:class => "btn btn-success btn-xs action-button" %>
 	       	<%= link_to "Edit Details", edit_boy_path(boy.id) ,:class => "btn btn-warning btn-xs action-button" %>
-	       	<%= link_to "Delete Details", {:action => :destroy, :id=> boy.id} ,:method=> :delete, :class => "btn btn-danger btn-xs action-button", data: {:confirm => 'Are you sure?'} %>
+	       	<%= link_to "Delete Details", boy ,:method=> :delete, :class => "btn btn-danger btn-xs action-button", data: {:confirm => 'Are you sure?'} %>
 	       	</div>
 	       	
 
@@ -41,22 +41,3 @@
     </div>
   </div>
 </div>
-
-<style type="text/css">
-	h1.boy_head{
-		border-bottom: 3px solid brown;
-		color: wheat;
-	}
-
-	span.boyspan{
-		color:yellowgreen;
-		padding-left: 10px;
-	}
-
-	a.action-button{
-		margin: 5px;
-    margin-left: 0px;
-	}
-
-	
-</style>
