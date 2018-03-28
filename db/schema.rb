@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(version: 20180325191213) do
 
   create_table "boys", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email", null: false
+    t.boolean "restricted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

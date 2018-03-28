@@ -3,12 +3,16 @@ class BoysController < ApplicationController
 
 	before_action :find_boy, :only => [:show, :destroy, :edit, :update]
 
+	#before_action :authorize, :except => [:index, :new, :create]
+
 	def index
 		@boys = Boy.all
 	end
 
 	def show
-		#@girl_friends = @boy.girl_friends
+		if @boy.restricted
+			redirect_to root_path, :notice => {:status => "error", :message => "Boy is Restricted"}
+		end
 	end
 
 	def edit
@@ -64,7 +68,9 @@ class BoysController < ApplicationController
 	end
 
 	def boy_params
-		params.require(:boy).permit(:first_name, :last_name, :email)
+
+		params[:boy][:restricted] = false unless params[:boy][:restricted].present?
+		params.require(:boy).permit(:first_name, :last_name, :email, :restricted)
 	end
 
 end
