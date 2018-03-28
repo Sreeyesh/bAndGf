@@ -69,8 +69,8 @@ class BoysController < ApplicationController
 
 	def boy_params
 
-		params[:boy][:restricted] = false unless params[:boy][:restricted].present?
-		params.require(:boy).permit(:first_name, :last_name, :email, :restricted)
+		#params[:boy][:restricted] = false unless params[:boy][:restricted].present?
+		params.require(:boy).permit(:first_name, :last_name, :email)
 	end
 
 end
