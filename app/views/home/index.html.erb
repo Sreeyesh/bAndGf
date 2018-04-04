@@ -1,0 +1,115 @@
+<div id="overview" class="header">
+	<div class="container" >
+		<div class="row">
+			<div class="col-lg-6 col-md-6">
+				<h1>OVERVIEW</h1>
+				<p class="text-justify">Demo application which illustrates the basic concepts of RAILS application. We will use boy and his girlfriends relation to understand the concepts. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Let us start learning....</p>
+
+				<%= link_to "SignIn", "#" ,:class => "btn btn-primary btn-md" %>
+				<%= link_to "SignUp", "#" ,:class => "btn btn-success btn-md" %>
+			</div>
+			<div class="col-lg-6 col-md-6">
+					<img  src="<%= image_path('b&gf.png') %>"></img>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="design" class="design">
+	<div class="container" >
+
+		<h1>DESIGN</h1>
+		<p > Rails model association is shown below. Boy has many girl friends</p>
+		<div class="row">
+			<div class="col-lg-4 col-md-4" >
+				<h4>Boy</h4>
+				</br><img  src="<%= image_path('boy.png') %>"></img>
+			</div>
+
+			<div class="col-lg-4 col-md-4" style="text-align: center;">
+				
+				</br>has many<img  src="<%= image_path('arrow.png') %>"></img>
+			</div>
+
+			<div class="col-lg-4 col-md-4">
+					<h4>Girl Friends</h4>			
+					<img  src="<%= image_path('girl.png') %>"></img>
+					<img  src="<%= image_path('girl.png') %>"></img></br>
+					<img  src="<%= image_path('girl.png') %>"></img>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<style type="text/css">
+	#overview{
+		margin-top: 50px;
+		background-image:url("<%= image_path('background.jpg') %>");
+		background-repeat: no-repeat;
+		background-color: #403e3e;
+		color: #fff;
+		background-size: cover;
+		padding: 10px;
+	}
+
+	#overview img{
+		width: 90%;
+		margin: 0 0 0 80px;
+	}
+
+	#overview .btn{
+		border-radius: 0px;
+		padding: 5px 20px;
+		margin-left: 40px; 
+		margin-top: 10px;
+	}
+
+	#overview h1{
+		font-weight: bold;
+    font-size: 34px;
+    margin-bottom: 20px;
+	}
+
+
+
+	/* DESIGN */
+
+	#design {
+		text-align: center;
+	}
+
+	#design h1{
+		font-weight: bold;
+    font-size: 34px;
+    margin-bottom: 10px;
+	}
+
+	#design h4{
+		font-weight: bold;
+	}
+
+	#design img{
+		width: 20%;
+		padding: 15px;
+	}
+
+
+
+
+@media(max-width: 768px){
+	#overview{
+		background-position-x: -400px;
+	}
+
+	#overview img {
+    width: 100%;
+    margin: 0px;
+	}
+}
+	
+</style>
